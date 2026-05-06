@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "@types/jquery": "^4.0.0",
-    "@types/node": "catalog:",
+    "@types/node": "^22.15.17",
+    "vite": "^5.4.19",
     "jquery": "^4.0.0",
-    "sass": "^1.99.0",
-    "vite": "catalog:"
+    "sass": "^1.99.0"
   }
 }
