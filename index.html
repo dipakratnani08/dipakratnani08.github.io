@@ -1,733 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Portfolio - Dipak Ratnani</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dipak Ratnani — Lead Backend Engineer</title>
+    <meta name="description" content="Lead Backend Engineer with 10+ years building SaaS platforms, APIs, and enterprise systems. Expert in Laravel, PHP, and MySQL." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader-inner">
+        <div class="loader-ring"></div>
+        <div class="loader-text">DR</div>
+      </div>
     </div>
-    <!-- Spinner End -->
 
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="https://api.whatsapp.com/send?phone=917383718849&text=Hello" class="navbar-brand d-block d-lg-none">
-            <h1 class="text-primary fw-bold m-0">Hire Me</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <div class="nav-logo">
+          <span class="logo-bracket">{</span>
+          <span class="logo-name">DR</span>
+          <span class="logo-bracket">}</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+          <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+          <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <a href="https://linkedin.com/in/dipak-ratnani-b0558a80" target="_blank" class="nav-cta">Hire Me</a>
+        <button class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#skill" class="nav-item nav-link">Skills</a>
-                <a href="#service" class="nav-item nav-link">Services</a>
-            </div>
-            <a href="https://api.whatsapp.com/send?phone=917383718849&text=Hello" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
-                <h1 class="text-primary fw-bold m-0">Hire Me</h1>
-            </a>
-            <div class="navbar-nav me-auto py-0">
-                <a href="#project" class="nav-item nav-link">Projects</a>
-                <!-- <a href="#team" class="nav-item nav-link">Team</a> -->
-                <a href="#testimonial" class="nav-item nav-link">Testimonial</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-        </div>
+      </div>
     </nav>
-    <!-- Navbar End -->
 
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-light my-6 mt-0" id="home">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">Dipak Ratnani</h1>
-                    <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">Full Stack Developer, PHP Developer, Laravel Developer, Angular Developer, Web Developer, Back End Developer</div>
-                    <div class="d-flex align-items-center pt-5">
-                        <a href="https://drive.google.com/file/d/1FOuXSGW_axxP2doJ2xJBWiNnNHX_IwdP/view?usp=drive_link" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
-                        <!-- <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5> -->
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="img/profile_man.png" alt="">
-                </div>
-            </div>
-        </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
     </div>
-    <!-- Header End -->
 
-
-    <!-- Video Modal Start -->
-    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
         </div>
-    </div>
-    <!-- Video Modal End -->
-
-
-    <!-- About Start -->
-    <div class="container-xxl py-6" id="about">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="years flex-shrink-0 text-center me-4">
-                            <h1 class="display-1 mb-0">8+</h1>
-                            <h5 class="mb-0">Years</h5>
-                        </div>
-                        <h3 class="lh-base mb-0">of working experience as a web developer</h3>
-                    </div>
-                    <p class="mb-4">
-                        I'm having 7+ years exp of professional experience in web developement. I developed web applications , API for mobile applications, implmentation of Twilio, Google api , Payment api like Razropay , paypal, Authorize .net, PayuMoney. <br><br>I developed diffrent types of web application like CRM Project , School management application , Event Management , Ecommerce project, Asset Management System.
-                    </p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Product</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
-                    <!-- <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a> -->
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-1_new.jpg" alt="">
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-2_new.jpg" alt="">
-                        </div>
-                    </div>
-                    <!-- <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Happy Clients</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
-                    </div>
-                    <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
-                    </div>
-                    <p class="mb-0">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p> -->
-                </div>
-            </div>
+        <h1 class="hero-name">
+          <span class="hero-name-first">Dipak</span>
+          <span class="hero-name-last">Ratnani</span>
+        </h1>
+        <div class="hero-typed-wrapper">
+          <span class="typed-prefix">I build </span>
+          <span id="typed-text" class="typed-text"></span>
+          <span class="typed-cursor">|</span>
         </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Expertise Start -->
-    <div class="container-xxl py-6 pb-5" id="skill">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Skills & Experience</h1>
-                    <p class="mb-4">
-                        I'm providing a complete Web Solution by managing your websites with several processes.
-                    </p>
-                    <h3 class="mb-4">My Skills</h3>
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">HTML</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">CSS</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">PHP</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Tailwind CSS</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">CodeIgniter</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Javascript</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Database</h6>
-                                    <h6 class="font-weight-bold">90%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Bootstrap</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Laravel</h6>
-                                    <h6 class="font-weight-bold">95%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Angular</h6>
-                                    <h6 class="font-weight-bold">85%</h6>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
-                        </li>
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>Jr. PHP Developer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">05/2015 - 10/2016</p>
-                                    <h6 class="mb-0">Creole Studios</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Sr. PHP Developer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">10/2016 - 07/2022</p>
-                                    <h6 class="mb-0">AGILE Infoways Pvt Ltd</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Sr. PHP Developer</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">07/2022 - Working</p>
-                                    <h6 class="mb-0">Beyond Technology</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                            <div class="row gy-5 gx-4">
-                                <div class="col-sm-6">
-                                    <h5>BCA</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2009 - 2012</p>
-                                    <h6 class="mb-0">Hemchandracharya North Gujarat University</h6>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h5>Advance PHP Certification Course</h5>
-                                    <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">2014 - 2015</p>
-                                    <h6 class="mb-0">TOPS Technologies</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <p class="hero-summary">
+          Lead Backend Engineer with <strong>10+ years</strong> designing and scaling SaaS platforms,
+          enterprise systems, and API-driven architectures. Expert in Laravel, PHP &amp; MySQL.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="10">0</span><span class="stat-sym">+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="25">0</span><span class="stat-sym">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="100">0</span><span class="stat-sym">K+</span>
+            <span class="stat-label">Users Served</span>
+          </div>
         </div>
-    </div>
-    <!-- Expertise End -->
-
-
-    <!-- Service Start -->
-    <div class="container-fluid bg-light my-5 py-6" id="service">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Services</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="https://api.whatsapp.com/send?phone=917383718849&text=Hello">Hire Me</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-crop-alt fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Web Developement</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$20/Hr</span></h6>
-                            <span>Custom PHP, Laravel, Angular, WordPress, Codeigniter, or Any other Technology/framework</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code-branch fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">API Development</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$20/Hr</span></h6>
-                            <span>Custom PHP, Laravel, Angular, WordPress, Codeigniter, or Any other Technology/framework</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Web Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$20/Hr</span></h6>
-                            <span>Bootstrap, HTML,CSS, Tailwind CSS</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Database Management / Design</h4>
-                            <h6 class="mb-3">Start from <span class="text-primary">$20/Hr</span></h6>
-                            <span>Mysql , MSSQL & Others</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="https://dipakratnani08.github.io/" target="_blank" class="btn btn-ghost"><i class="fas fa-file-alt"></i> View Resume</a>
         </div>
-    </div>
-    <!-- Service End -->
-
-
-    <!-- Projects Start -->
-    <div class="container-xxl py-6 pt-5" id="project">
-        <div class="container">
-            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Projects</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Projects</li>
-                        <li class="mx-3" data-filter=".first">Web Developement</li>
-                        <li class="mx-3" data-filter=".second">App Developement</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project/whichwich.jpg" alt="whichwich">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project/whichwich.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="https://www.whichwich.com/"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project/cityfurnish.jpg" alt="cityfurnish">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project/cityfurnish.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="https://cityfurnish.com/"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project/mdoec.jpg" alt="MDOEC">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project/mdoec.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="https://mdoec.in/"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project/bkms.jpg" alt="BKMS">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project/bkms.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="https://bk.na.baps.org/"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project/sahastrardham.jpg" alt="Sahastrar Dham">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project/sahastrardham.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project/gujaratsahajayoga.jpg" alt="Gujarat Sahajayoga">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project/gujaratsahajayoga.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="http://gujaratsahajayoga.org/"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project/bkms app.jpg" alt="BKMS App">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project/bkms app.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-socials">
+          <a href="https://github.com/dipakratnani08" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/dipak-ratnani-b0558a80" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:dipakratnani08@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+917383718849" title="Phone"><i class="fas fa-phone"></i></a>
         </div>
-    </div>
-    <!-- Projects End -->
-
-
-    <!-- Team Start -->
-    <!-- <div class="container-xxl py-6 pb-5" id="team">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Team Members</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Contact Us</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-1.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Full Name</h5>
-                                <span>Designer</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-2.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Full Name</h5>
-                                <span>Designer</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative">
-                        <img class="img-fluid rounded" src="img/team-3.jpg" alt="">
-                        <div class="team-text bg-white rounded-end p-4">
-                            <div>
-                                <h5>Full Name</h5>
-                                <span>Designer</span>
-                            </div>
-                            <i class="fa fa-arrow-right fa-2x text-primary"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-avatar-ring">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="avatar-placeholder">
+            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=300&h=300&fit=crop&crop=center&q=80" alt="Developer workspace" />
+          </div>
         </div>
-    </div> -->
-    <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid bg-light py-5 my-5" id="testimonial">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Testimonial</h1>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="testimonial-left h-100">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-2.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">We sincerely thank you for your dedication and commitment towards the BKMS web application project. We appreciate everything that you have done over past 6 years since you have joined this project.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Bhargav Patel</h5>
-                            <!-- <span>Profession</span> -->
-                        </div>
-                        <!-- <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-2.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="testimonial-item text-center">
-                            <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle border border-secondary p-2 mx-auto" src="img/testimonial-3.jpg" alt="">
-                                <div class="testimonial-icon">
-                                    <i class="fa fa-quote-left text-primary"></i>
-                                </div>
-                            </div>
-                            <p class="fs-5 fst-italic">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                            <hr class="w-25 mx-auto">
-                            <h5>Client Name</h5>
-                            <span>Profession</span>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="testimonial-right h-100">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.1s" src="img/testimonial-1.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.3s" src="img/testimonial-2.jpg" alt="">
-                        <img class="img-fluid wow fadeIn" data-wow-delay="0.5s" src="img/testimonial-3.jpg" alt="">
-                    </div>
-                </div>
-            </div>
+        <div class="floating-badge fb-1">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" class="badge-logo" /> Laravel
         </div>
-    </div>
-    <!-- Testimonial End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-xxl pb-5" id="contact">
-        <div class="container py-5">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Let's Work Together</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="https://api.whatsapp.com/send?phone=917383718849&text=Hello">Say Hello</a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <!-- <p class="mb-2">My office:</p>
-                    <h3 class="fw-bold">123 Street, New York, USA</h3>
-                    <hr class="w-100"> -->
-                    <p class="mb-2">Contact me:</p>
-                    <h3 class="fw-bold">+91 73837 18849</h3>
-                    <hr class="w-100">
-                    <p class="mb-2">Mail me:</p>
-                    <h3 class="fw-bold">dipakratnani08@gmail.com</h3>
-                    <hr class="w-100">
-                    <p class="mb-2">Follow me:</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-primary me-2" href="https://twitter.com/dipak_ratnani"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.facebook.com/ITmasterDIPAK888"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://api.whatsapp.com/send?phone=917383718849&text=Hi"><i class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/dipak-ratnani-b0558a80/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div> -->
-            </div>
+        <div class="floating-badge fb-2">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="badge-logo" /> MySQL
         </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Map Start -->
-    <!-- <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container-xxl pt-5 px-0">
-            <div class="bg-dark">
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                frameborder="0" style="width: 100%; height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
-                tabindex="0"></iframe>
-            </div>
+        <div class="floating-badge fb-3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="badge-logo" /> PHP
         </div>
-    </div> -->
-    <!-- Map End -->
+        <div class="floating-badge fb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" class="badge-logo" /> AWS
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
-
-    <!-- Copyright Start -->
-    <div class="container-fluid bg-dark text-white py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom text-secondary" href="#">Dipak Ratnani</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <!-- Designed By <a class="border-bottom text-secondary" href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a> -->
-                    </div>
+    <!-- ABOUT -->
+    <section id="about" class="about reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 / About</span>
+          <h2 class="section-title">Who I Am</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-photo-col reveal-up">
+            <div class="about-photo-frame">
+              <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=700&q=80" alt="Developer workspace" />
+              <div class="about-photo-overlay">
+                <div class="about-photo-stats">
+                  <div class="aph-stat"><span class="aph-val">10+</span><span class="aph-lbl">Years</span></div>
+                  <div class="aph-stat"><span class="aph-val">25+</span><span class="aph-lbl">Projects</span></div>
+                  <div class="aph-stat"><span class="aph-val">100K+</span><span class="aph-lbl">Users</span></div>
                 </div>
+              </div>
+              <div class="about-photo-badge"><i class="fas fa-check-circle"></i> Available for hire</div>
             </div>
+          </div>
+          <div class="about-text reveal-left">
+            <p>
+              I'm a <strong>Lead Backend Engineer</strong> based in Ahmedabad, India, with over a decade of experience
+              building enterprise-grade SaaS platforms and API-driven systems. I've worked with clients across
+              the <strong>US, Europe, Middle East, and APAC</strong> regions.
+            </p>
+            <p>
+              My expertise lies in designing scalable architectures using <strong>Laravel, PHP, and MySQL</strong>,
+              optimizing API performance, mentoring engineering teams, and delivering reliable cloud-based solutions.
+              I reduced API latency by 30% and improved code review throughput by 40% at my current role.
+            </p>
+            <p>
+              Beyond code, I believe in clean architecture, team-first culture, and continuous improvement.
+              I've mentored 4+ developers and established internal best-practice guides that elevated team-wide quality.
+            </p>
+            <div class="about-info-grid">
+              <div class="info-item">
+                <span class="info-label">Location</span>
+                <span class="info-value">Ahmedabad, India</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Email</span>
+                <span class="info-value">dipakratnani08@gmail.com</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Phone</span>
+                <span class="info-value">+91-7383718849</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Education</span>
+                <span class="info-value">BCA — HNGU, 2012</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-cards reveal-right">
+            <div class="about-card">
+              <div class="about-card-icon"><i class="fas fa-rocket"></i></div>
+              <h3>Performance</h3>
+              <p>30% API latency reduction, 20% DB load reduction, 40% code review throughput improvement</p>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon"><i class="fas fa-users"></i></div>
+              <h3>Leadership</h3>
+              <p>Led teams of 5+, mentored 4 developers, oversaw CI/CD pipelines across multi-client environments</p>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon"><i class="fas fa-globe"></i></div>
+              <h3>Global Reach</h3>
+              <p>Delivered 25+ projects for clients in the US, EU, Middle East, and APAC regions</p>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon"><i class="fas fa-shield-alt"></i></div>
+              <h3>Reliability</h3>
+              <p>99.8% API uptime, 15% cost reduction via query optimization, zero-downtime re-architectures</p>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- Copyright End -->
+      </div>
+    </section>
 
+    <!-- EXPERIENCE -->
+    <section id="experience" class="experience reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02 / Experience</span>
+          <h2 class="section-title">Work History</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-card current">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="tl-role">Lead Backend Engineer</h3>
+                  <span class="tl-company">Beyond Technology</span>
+                </div>
+                <span class="tl-period">Jul 2022 — May 2026</span>
+              </div>
+              <p class="tl-desc">Lead backend engineering for enterprise SaaS platforms using Laravel, PHP, and MySQL serving 100K+ monthly users. Architected and optimized APIs, mentored 4+ developers, and oversaw CI/CD pipelines for multi-client environments.</p>
+              <div class="tl-achievements">
+                <span><i class="fas fa-bolt"></i> 30% API latency reduction</span>
+                <span><i class="fas fa-database"></i> 20% DB load reduction</span>
+                <span><i class="fas fa-code-branch"></i> 12 major releases on time</span>
+                <span><i class="fas fa-chart-line"></i> 40% review throughput</span>
+              </div>
+              <div class="tl-tags">
+                <span>Laravel</span><span>PHP</span><span>MySQL</span><span>CI/CD</span><span>Agile</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="tl-role">Senior Software Engineer / Module Lead</h3>
+                  <span class="tl-company">Agile Infoways Pvt. Ltd.</span>
+                </div>
+                <span class="tl-period">Oct 2016 — Jul 2022</span>
+              </div>
+              <p class="tl-desc">Designed and delivered CRM and enterprise web applications for US/EU clients. Led backend team of 5, developing REST APIs and micro-modules. Re-architected reporting engine to handle 10× data volume with zero downtime.</p>
+              <div class="tl-achievements">
+                <span><i class="fas fa-project-diagram"></i> 25+ projects globally</span>
+                <span><i class="fas fa-coins"></i> 15% cost reduction</span>
+                <span><i class="fas fa-users"></i> New-hire ramp-up −35%</span>
+              </div>
+              <div class="tl-tags">
+                <span>Laravel</span><span>CodeIgniter</span><span>REST APIs</span><span>MySQL</span><span>CRM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="tl-role">PHP Backend Developer</h3>
+                  <span class="tl-company">Creole Studios</span>
+                </div>
+                <span class="tl-period">May 2015 — Sep 2016</span>
+              </div>
+              <p class="tl-desc">Built backend APIs and admin panels for global web and mobile apps. Developed push-notification system supporting 50K+ mobile users. Implemented first continuous testing workflow.</p>
+              <div class="tl-achievements">
+                <span><i class="fas fa-mobile-alt"></i> 50K+ mobile users</span>
+                <span><i class="fas fa-bug"></i> 20% bug reduction</span>
+                <span><i class="fas fa-server"></i> 99.8% API uptime</span>
+              </div>
+              <div class="tl-tags">
+                <span>PHP</span><span>APIs</span><span>Push Notifications</span><span>Unit Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-up">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="tl-role">Customer Support Executive</h3>
+                  <span class="tl-company">Vodafone Essar Pvt. Ltd.</span>
+                </div>
+                <span class="tl-period">Apr 2012 — Feb 2015</span>
+              </div>
+              <p class="tl-desc">Managed customer queries and technical issues with 95%+ satisfaction rate. Built strong communication and client interaction skills that now serve as the foundation for technical collaboration.</p>
+              <div class="tl-tags">
+                <span>Customer Service</span><span>Communication</span><span>Technical Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03 / Skills</span>
+          <h2 class="section-title">Technical Expertise</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skills-col reveal-left">
+            <h3 class="skills-col-title">Core Technologies</h3>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>Laravel / PHP</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>MySQL / MariaDB</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>REST API Design</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>JavaScript / jQuery</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>CodeIgniter</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="90"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skills-col reveal-right">
+            <h3 class="skills-col-title">Tools & Platforms</h3>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>Git / GitHub / GitLab</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>AWS (S3, EC2, Lambda)</span>
+                  <span class="skill-pct">65%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="65"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>Linux / Nginx / Apache</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>Angular / Bootstrap</span>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header">
+                  <span>Agile / Scrum / JIRA</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="90"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-logos-section reveal-up">
+          <h3 class="skills-col-title">Technology Stack</h3>
+          <div class="tech-logos-grid">
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP"><span>PHP</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"><span>Laravel</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeigniter/codeigniter-plain.svg" alt="CodeIgniter"><span>CodeIgniter</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery"><span>jQuery</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg" alt="Angular"><span>Angular</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="MSSQL"><span>MSSQL</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"><span>AWS</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="Nginx"><span>Nginx</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-original.svg" alt="Apache"><span>Apache</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/composer/composer-original.svg" alt="Composer"><span>Composer</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="JIRA"><span>JIRA</span></div>
+            <div class="tl-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><span>Bootstrap</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04 / Projects</span>
+          <h2 class="section-title">Featured Work</h2>
+          <p class="section-subtitle">Enterprise-grade systems built for scale, reliability, and global reach.</p>
+        </div>
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <div class="project-card reveal-up" data-index="0">
+            <div class="project-card-glow"></div>
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&h=260&fit=crop&q=80" alt="Enterprise system" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-card-number">01</div>
+            <div class="project-card-header">
+              <div class="project-icon-wrap">
+                <div class="project-icon-bg"></div>
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="project-meta">
+                <span class="project-company">Beyond Technology</span>
+                <span class="project-year">2022 – 2026</span>
+              </div>
+            </div>
+            <h3 class="project-title">Osool</h3>
+            <p class="project-subtitle">Enterprise Asset &amp; Recreation Management</p>
+            <p class="project-desc">Architected and led backend modules for enterprise asset management software. Enhanced scalability and API reliability for multi-region deployments serving enterprise clients worldwide.</p>
+            <div class="project-metrics">
+              <div class="metric"><span class="metric-val">100K+</span><span class="metric-lbl">Monthly Users</span></div>
+              <div class="metric"><span class="metric-val">30%</span><span class="metric-lbl">Faster APIs</span></div>
+              <div class="metric"><span class="metric-val">Multi</span><span class="metric-lbl">Region</span></div>
+            </div>
+            <div class="project-tags">
+              <span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST API</span><span>CI/CD</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-role"><i class="fas fa-user-tie"></i> Lead Backend Engineer</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card reveal-up" data-index="1">
+            <div class="project-card-glow project-card-glow--purple"></div>
+            <div class="project-img project-img--purple">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=260&fit=crop&q=80" alt="CRM analytics dashboard" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-card-number">02</div>
+            <div class="project-card-header">
+              <div class="project-icon-wrap project-icon-wrap--purple">
+                <div class="project-icon-bg"></div>
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <div class="project-meta">
+                <span class="project-company">Agile Infoways</span>
+                <span class="project-year">2016 – 2022</span>
+              </div>
+            </div>
+            <h3 class="project-title">BKMS</h3>
+            <p class="project-subtitle">Enterprise CRM Platform</p>
+            <p class="project-desc">Developed backend architecture, REST APIs, and workflow automation for a CRM platform supporting enterprise operations globally. Re-architected reporting engine to handle 10× data volume with zero downtime.</p>
+            <div class="project-metrics">
+              <div class="metric"><span class="metric-val">10×</span><span class="metric-lbl">Data Volume</span></div>
+              <div class="metric"><span class="metric-val">25+</span><span class="metric-lbl">Projects</span></div>
+              <div class="metric"><span class="metric-val">0</span><span class="metric-lbl">Downtime</span></div>
+            </div>
+            <div class="project-tags">
+              <span>Laravel</span><span>CodeIgniter</span><span>MySQL</span><span>CRM</span><span>Automation</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-role"><i class="fas fa-user-tie"></i> Module Lead</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card reveal-up" data-index="2">
+            <div class="project-card-glow project-card-glow--amber"></div>
+            <div class="project-img project-img--amber">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&h=260&fit=crop&q=80" alt="Restaurant platform" />
+              <div class="project-img-overlay"></div>
+            </div>
+            <div class="project-card-number">03</div>
+            <div class="project-card-header">
+              <div class="project-icon-wrap project-icon-wrap--amber">
+                <div class="project-icon-bg"></div>
+                <i class="fas fa-utensils"></i>
+              </div>
+              <div class="project-meta">
+                <span class="project-company">Creole Studios</span>
+                <span class="project-year">2015 – 2016</span>
+              </div>
+            </div>
+            <h3 class="project-title">WhichWich</h3>
+            <p class="project-subtitle">International Restaurant Platform</p>
+            <p class="project-desc">Built backend services and admin tools for international franchise. Supported API integrations for mobile ordering and push notifications with industry-leading reliability.</p>
+            <div class="project-metrics">
+              <div class="metric"><span class="metric-val">50K+</span><span class="metric-lbl">Mobile Users</span></div>
+              <div class="metric"><span class="metric-val">99.8%</span><span class="metric-lbl">API Uptime</span></div>
+              <div class="metric"><span class="metric-val">−20%</span><span class="metric-lbl">Bug Rate</span></div>
+            </div>
+            <div class="project-tags">
+              <span>PHP</span><span>APIs</span><span>Push Notif.</span><span>Admin Panel</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-role"><i class="fas fa-user-tie"></i> PHP Backend Developer</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05 / Contact</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">Open to opportunities, collaborations, and interesting engineering challenges.</p>
+        </div>
+
+        <div class="contact-cta-row reveal-up">
+          <a href="https://wa.me/917383718849?text=Hi%20Dipak%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" class="contact-cta-btn contact-cta-whatsapp">
+            <div class="cta-btn-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="cta-btn-text">
+              <span class="cta-btn-label">Chat on WhatsApp</span>
+              <span class="cta-btn-sub">+91-7383718849 · Fastest response</span>
+            </div>
+            <i class="fas fa-arrow-right cta-btn-arrow"></i>
+          </a>
+          <a href="https://dipakratnani08.github.io/" target="_blank" class="contact-cta-btn contact-cta-resume">
+            <div class="cta-btn-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="cta-btn-text">
+              <span class="cta-btn-label">View Resume</span>
+              <span class="cta-btn-sub">Full CV · 10+ years experience</span>
+            </div>
+            <i class="fas fa-arrow-right cta-btn-arrow"></i>
+          </a>
+        </div>
+
+        <div class="contact-links-row reveal-up">
+          <a href="mailto:dipakratnani08@gmail.com" class="contact-link-card">
+            <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-link-label">Email</span>
+              <span class="contact-link-value">dipakratnani08@gmail.com</span>
+            </div>
+          </a>
+          <a href="tel:+917383718849" class="contact-link-card">
+            <div class="contact-link-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <span class="contact-link-label">Phone</span>
+              <span class="contact-link-value">+91-7383718849</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/dipak-ratnani-b0558a80" target="_blank" class="contact-link-card">
+            <div class="contact-link-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <span class="contact-link-label">LinkedIn</span>
+              <span class="contact-link-value">dipak-ratnani-b0558a80</span>
+            </div>
+          </a>
+          <a href="https://github.com/dipakratnani08" target="_blank" class="contact-link-card">
+            <div class="contact-link-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <span class="contact-link-label">GitHub</span>
+              <span class="contact-link-value">dipakratnani08</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-logo">
+            <span class="logo-bracket">{</span>
+            <span class="logo-name">DR</span>
+            <span class="logo-bracket">}</span>
+          </div>
+          <p class="footer-copy">© 2026 Dipak Ratnani. Crafted with <span class="heart">♥</span> in Ahmedabad.</p>
+          <div class="footer-links">
+            <a href="https://github.com/dipakratnani08" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/dipak-ratnani-b0558a80" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:dipakratnani08@gmail.com"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <button id="backToTop" title="Back to top"><i class="fas fa-chevron-up"></i></button>
 
-    <a
-        href="https://api.whatsapp.com/send?phone=917383718849&text=Hello"
-        class="whatsapp_float"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <i class="fab fa-whatsapp whatsapp-icon"></i>
-      </a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
